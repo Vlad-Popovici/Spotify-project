@@ -1,5 +1,6 @@
 import requests
 import base64
+import pandas as pd
 
 client_id = '86ceb770de7b43f9b75d341b77367da0'
 client_secret = '59914a1a8c7c469fb1bf18a3e42b2b5c'
@@ -43,5 +44,15 @@ look_up_headers = {
 
 look_up_artist = requests.get(get_url, headers=look_up_headers)
 print(look_up_artist.json())
+
+
+#Sort the JSON data in Pandas and print the track names
+raw_data = pd.DataFrame(look_up_artist.json())
+track_list = []
+for i in raw_data['tracks']:
+	track_list.append(i['name'])
+	
+for i in track_list:
+	print(i)
 
 
