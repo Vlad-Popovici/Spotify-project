@@ -2,8 +2,8 @@ import requests
 import base64
 import pandas as pd
 
-client_id = '86ceb770de7b43f9b75d341b77367da0'
-client_secret = '59914a1a8c7c469fb1bf18a3e42b2b5c'
+client_id = 'xxxxxx'
+client_secret = 'xxxxx'
 
 client_creds = f'{client_id}:{client_secret}'
 client_creds_b64 = base64.b64encode(client_creds.encode())
